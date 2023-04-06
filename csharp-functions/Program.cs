@@ -1,11 +1,4 @@
 ﻿/*
- In questo esercizio vi chiedo di definire qualche funzione di utilità che poi potete usare per poter fare operazioni complesse nei vostri programma principale.
- Scrivete nel vostro programma principale Program.cs le seguenti funzioni di base:
-
-    int Quadrato(int numero): che vi restituisca il quadrato del numero passato come parametro.
-
-    int[] ElevaArrayAlQuadrato(int[] array): che preso un array di numeri interi, restituisca un nuovo array con tutti gli elementi elevati quadrato. Attenzione: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione! Vi ricordate perchè? Pensateci (vedi slide)
-
     int sommaElementiArray(int[] array): che preso un array di numeri interi, restituisca la somma totale di tutti gli elementi dell’array.
 
    Una volta completate queste funzioni di utilità di base, e dato il seguente array di numeri [2, 6, 7, 5, 3, 9] già dichiarato nel vostro codice, si vogliono utilizzare le funzioni per:
@@ -21,6 +14,10 @@
  */
 
 
+// int[] ElevaArrayAlQuadrato(int[] array): che preso un array di numeri interi, restituisca un nuovo array con tutti gli elementi elevati quadrato.Attenzione: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione! 
+
+using System.Reflection.Metadata;
+using System;
 
 namespace csharp_functions
 {
@@ -30,8 +27,13 @@ namespace csharp_functions
         {
             int[] numeri = { 1, 2, 3, 4, 5, 6, 7, 8 };
             StampaArray(numeri);
+            Console.WriteLine();
 
             Console.WriteLine(Quadrato(8));
+
+
+            int[] quadrati = ElevaArrayAlQuadrato(numeri);
+            Console.WriteLine(string.Join(", ", quadrati));
 
         }
 
@@ -47,7 +49,7 @@ namespace csharp_functions
                 }
             }
             Console.Write("]");
-            Console.ReadLine();
+            
         }
 
         static int Quadrato(int numero)
@@ -56,7 +58,20 @@ namespace csharp_functions
             return quadrato;
         }
 
+        static int[] ElevaArrayAlQuadrato(int[] array)
+        {
+            int[] quadrati = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                quadrati[i] = array[i] * array[i];
+            }
+            return quadrati;
+        }
 
 
+
+       
     }
+
+    
 }
