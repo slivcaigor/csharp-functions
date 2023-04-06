@@ -89,23 +89,24 @@ namespace csharp_functions
         //  prende come parametro un numero intero e restituisce il suo quadrato 
         static int Quadrato(int numero)
         {
-            // dichiaro una variabile "quadrato" di tipo intero e assegno il valore del parametro "numero" elevato al quadrato
-            int quadrato = numero * numero;
-            //restituisco il valore della variabile "quadrato" come risultato della funzione
-            return quadrato;
+            return numero * numero;
         }
 
         // prende come parametro un array di numeri interi e restituisce un nuovo array contenente il quadrato di ogni elemento dell'array originale
         static int[] ElevaArrayAlQuadrato(int[] array)
         {
             // dichiaro un nuovo array "quadrati" che ha la dimensione uguale alla lunghezza dell'array originale
-            int[] quadrati = new int[array.Length];
+            //int[] quadrati = new int[array.Length];
+
+            int[] quadrati = (int[])array.Clone();
+
 
             // itero attraverso ogni elemento dell'array originale
             for (int i = 0; i < array.Length; i++)
             {
                 // per ogni elemento calcolo il suo quadrato e lo assegno all'elemento corrispondente del array nuovo "quadrati"
-                quadrati[i] = array[i] * array[i];
+                // quadrati[i] = array[i] * array[i];
+                quadrati[i] = Quadrato(quadrati[i]);
             }
             // restituisco l'array con i quadrati degli elementi
             return quadrati;
