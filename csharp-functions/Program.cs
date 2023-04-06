@@ -25,13 +25,32 @@
  */
 
 
+
 namespace csharp_functions
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            int[] numeri = { 1, 2, 3, 4, 5, 6, 7, 8 };
+            StampaArray(numeri);
         }
+
+
+       static void StampaArray(int[] array)
+        {
+            Console.Write("[");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]);
+                if (i < array.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.Write("]");
+            Console.ReadLine();
+        }
+
     }
 }
