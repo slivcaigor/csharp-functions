@@ -14,7 +14,7 @@
  */
 
 
-// int[] ElevaArrayAlQuadrato(int[] array): che preso un array di numeri interi, restituisca un nuovo array con tutti gli elementi elevati quadrato.Attenzione: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione! 
+
 
 using System.Reflection.Metadata;
 using System;
@@ -31,10 +31,10 @@ namespace csharp_functions
 
             Console.WriteLine(Quadrato(8));
 
-
             int[] quadrati = ElevaArrayAlQuadrato(numeri);
             Console.WriteLine(string.Join(", ", quadrati));
 
+            Console.WriteLine(SommaElementiArray(numeri)); 
         }
 
         static void StampaArray(int[] array)
@@ -68,10 +68,15 @@ namespace csharp_functions
             return quadrati;
         }
 
+        static int SommaElementiArray(int[] array)
+        {
+            int somma = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                somma += array[i];
+            }
+            return somma;
+        }
 
-
-       
     }
-
-    
 }
